@@ -1,6 +1,6 @@
 import { defineConfig } from "@rspack/cli";
 import { rspack } from "@rspack/core";
-import * as RefreshPlugin from "@rspack/plugin-react-refresh";
+import RefreshPlugin from "@rspack/plugin-react-refresh";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -13,6 +13,7 @@ export default defineConfig({
 		main: "./src/main.tsx"
 	},
 	resolve: {
+		pnp: true,
 		extensions: ["...", ".ts", ".tsx", ".jsx"]
 	},
 	module: {
